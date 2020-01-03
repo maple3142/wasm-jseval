@@ -19,5 +19,5 @@ require('../dist/index')
 	.getInstance()
 	.then(mod => {
 		console.log('eval: ', eval(testString))
-		console.log('eval.js: ', mod.eval(testString))
+		console.log('duktape-eval: ', mod.eval(testString))
 	})

@@ -6,7 +6,11 @@ const char* eval(char* js_code) {
 	duk_int_t rc = duk_peval(ctx);
 	if (rc != 0) {
 		duk_safe_to_stacktrace(ctx, -1);
-		return duk_get_string(ctx, -1);
+		const char* stacktrace = duk_get_string(ctx, -1);
+		duk_destroy_heap(ctx);
+		return stacktrace;
 	}
-	return duk_json_encode(ctx, -1);
+	const char* json = duk_json_encode(ctx, -1);
+	duk_destroy_heap(ctx);
+	return json;
 }
