@@ -25,3 +25,22 @@ duktapeEval.getInstance().then(mod => {
 })
 </script>
 ```
+
+## Q&A
+
+### What can it runs?
+
+Whatever [Duktape](https://duktape.org/) can run. Basically ES5 syntax and some ES6, ES7 capabilities.
+
+### How can I pass data to it?
+
+`JSON.stringify` is your friend.
+
+### How can I return data from it?
+
+Just like normal `eval`, for example `var a={};a.prop=1;a` will return `{ prop: 1 }`. But keep in mind, only JSON serializable data can be returned.
+
+### How big is this?
+
+Script size: 348kB
+Gzipped size: 154kB
