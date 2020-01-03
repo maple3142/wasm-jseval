@@ -12,6 +12,8 @@ In node:
 const { getInstance } = require('duktape-eval')
 getInstance().then(mod => {
 	console.log(mod.eval('1+1')) // 2
+	const add = mod.newFunction(['a', 'b'], 'return a+b')
+	console.log(add(1, 2)) // 3
 })
 ```
 
@@ -20,11 +22,29 @@ In browser:
 ```html
 <script src="https://cdn.jsdelivr.net/gh/maple3142/duktape-eval/duktapeEval.js"></script>
 <script>
-duktapeEval.getInstance().then(mod => {
-	console.log(mod.eval('1+1')) // 2
-})
+	duktapeEval.getInstance().then(mod => {
+		console.log(mod.eval('1+1')) // 2
+		const add = mod.newFunction(['a', 'b'], 'return a+b')
+		console.log(add(1, 2)) // 3
+	})
 </script>
 ```
+
+## API
+
+### `duktapeEval.getInstance(): Promise<Instance>`
+
+Returns a Promise to resolve the module instance.
+
+### `Instance`
+
+#### `Instance#eval(code: string): any`
+
+Evaluate JavaScript string in Duktape engine, and return a value.
+
+#### `Instance#newFunction(argnames: string[], body: string): (...any) => any`
+
+Create a function like `new Function` to be called afterward.
 
 ## Q&A
 
