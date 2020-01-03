@@ -9,6 +9,7 @@
 		"rollup-plugin-uglify": "^6.0.4"
 	},
 	"scripts": {
-		"build": "rollup -c"
+		"build": "rollup -c",
+		"test": "node test/test.js"
 	}
 }
