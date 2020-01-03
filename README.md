@@ -20,7 +20,7 @@ getInstance().then(mod => {
 In browser:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/maple3142/duktape-eval/duktapeEval.js"></script>
+<script src="https://unpkg.com/duktape-eval"></script>
 <script>
 	duktapeEval.getInstance().then(mod => {
 		console.log(mod.eval('1+1')) // 2
