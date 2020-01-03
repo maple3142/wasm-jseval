@@ -1,0 +1,14 @@
+{
+	"name": "duktape-eval",
+	"version": "0.0.1",
+	"main": "index.js",
+	"license": "MIT",
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^11.0.0",
+		"rollup-plugin-uglify": "^6.0.4",
+		"rollup": "^1.27.14"
+	},
+	"scripts": {
+		"build": "rollup -c"
+	}
+}
