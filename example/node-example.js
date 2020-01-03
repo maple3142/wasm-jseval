@@ -15,7 +15,7 @@ for(var k in obj){
 }
 sum
 `
-require('../dist/index')
+require('../duktapeEval')
 	.getInstance()
 	.then(mod => {
 		console.log('eval: ', eval(testString))
