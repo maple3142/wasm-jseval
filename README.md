@@ -1,6 +1,6 @@
 # duktape-eval
 
-A safe **eval** library based on WebAssembly build of [Duktape](https://duktape.org/).
+A safe **eval** library based on WebAssembly and [Duktape](https://duktape.org/).
 
 [Demo](https://gh.maple3142.net/maple3142/duktape-eval/ae198189baf244ff062901475e8877637d265df3/example/example.html) | [Source code of Demo](https://github.com/maple3142/duktape-eval/blob/master/example/example.html)
 
