@@ -1,7 +1,8 @@
 {
 	"name": "wasm-jseval",
 	"version": "0.1.1",
-	"main": "duktapeEval.js",
+	"main": "index.js",
+	"browser": "duktapeEval.js",
 	"license": "MIT",
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^11.0.0",

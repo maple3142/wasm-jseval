@@ -15,9 +15,11 @@ for(var k in obj){
 }
 sum
 `
-require('../duktapeEval')
-	.getInstance()
-	.then(mod => {
-		console.log('eval: ', eval(testString))
-		console.log('duktape-eval: ', mod.eval(testString))
-	})
+const { duktapeEval, quickjsEval } = require('../index')
+console.log('eval: ', eval(testString))
+duktapeEval.getInstance().then(mod => {
+	console.log('duktapeEval: ', mod.eval(testString))
+})
+quickjsEval.getInstance().then(mod => {
+	console.log('quickjsEval: ', mod.eval(testString))
+})
