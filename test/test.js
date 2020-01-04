@@ -1,8 +1,8 @@
 const assert = require('assert')
 
-require('../duktapeEval')
-	.getInstance()
-	.then(mod => {
+function runTest(name, m) {
+	m.getInstance().then(mod => {
+		console.log(name)
 		assert(mod.eval('1+1') === 2)
 		assert(mod.eval('var a={m:"hello"};a.m+" world"') === 'hello world')
 		const add = mod.newFunction(['a', 'b'], 'return a+b')
@@ -17,3 +17,6 @@ require('../duktapeEval')
 				'[3,4]'
 		)
 	})
+}
+runTest('duktape', require('../duktapeEval'))
+runTest('quickjs', require('../quickjsEval'))

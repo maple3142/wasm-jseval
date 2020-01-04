@@ -1,4 +1,4 @@
-import ModuleLoader from './eval.js'
+import ModuleLoader from 'EVALJS'
 
 var Module = ModuleLoader()
 var readyPromise = new Promise(function(res) {

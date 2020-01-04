@@ -1,5 +1,5 @@
 {
-	"name": "duktape-eval",
+	"name": "wasm-jseval",
 	"version": "0.1.1",
 	"main": "duktapeEval.js",
 	"license": "MIT",
@@ -9,7 +9,7 @@
 		"rollup-plugin-uglify": "^6.0.4"
 	},
 	"scripts": {
-		"build": "rollup -c",
+		"build": "rollup -c --config-target=duktape && rollup -c --config-target=quickjs",
 		"test": "node test/test.js"
 	}
 }
